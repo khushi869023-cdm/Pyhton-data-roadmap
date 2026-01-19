@@ -1,0 +1,74 @@
+# Dictionary Example
+info = {
+    "key"   : "value",
+    "name"  : "Alice",
+    "learning" : "Python",
+    "is_student": True,
+    "age"   : 25, 
+    "subjects": ["Math", "Science", "Art"],
+    "marks" : 94.44,        
+    12.99 : "price"
+}
+
+print (info ["name"]) # prints the value associated with the key 'name'
+print (type(info))  # prints the data type of variable 'info'
+print (info [12.99]) # prints the value associated with the key 12.99
+print (info.keys())  # prints all the keys in the dictionary 'info'
+print (info.values())  # prints all the values in the dictionary 'info'
+
+
+info["age"] = 26  # updates or overwrites
+print (info["age"])  # prints the updated value associated with the key 'age'
+
+null_dict = {}  # empty dictionary
+print (type(null_dict))  # prints the data type of variable 'null_dict'
+
+student = {
+    "name": "Bob",
+    "age": 22,
+    "subjects" : {
+        "Physics" : 88,
+        "Chemistry" : 92,
+        "Biology" : 79
+    }
+}  ## nested dictionary (Dictionary within dictionary)
+
+print ( student )
+
+print ( student["subjects"]["Chemistry"] )  # prints the value associated with the key 'Chemistry' in the nested dictionary 'subjects'
+print ( student.get("name") )  # prints the value associated with the key 'name'
+
+print (student.keys())  # prints all the keys in the dictionary 'student'      
+
+print (list(student.keys()))  # converts the keys view into a list and prints it    
+print (len (student))  # prints the number of key-value pairs in the dictionary 'student'
+
+print (student.values())  # prints all the values in the dictionary 'student'
+print (list(student.values()))  # converts the values view into a list and prints it
+
+print (student.items())  # prints all the key-value pairs in the dictionary 'student' as tuples
+print (list(student.items()))  # converts the items view into a list and prints it  
+
+pairs = student.items()  # assigns the items view to variable 'pairs'
+print (type(pairs))  # prints the data type of variable 'pairs'     
+print (list(pairs))  # converts the items view into a list and prints it    
+
+
+print ( student.get("grade", "Not Found") )  # tries to get the value for key 'grade', returns 'Not Found' since key doesn't exist
+student["grade"] = "A"  # adds a new key-value pair to the dictionary 'student'
+print ( student["grade"] )  # prints the value associated with the new key 'grade
+
+# print (student["name2"]) #error since key 'name2' doesn't exist
+print (student.get("name2")) #no error -> None 
+print (student.get("name2", "Not Found")) #no error -> 'Not Found'
+
+
+## ERRORS
+# print (student ["name2"]) # KeyError since 'name2' doesn't exist
+# print ("hi")
+# print ("welcome to")
+# print ("we are learning")
+# print ("coding")
+# # error in one single line causes the whole program to stop
+
+print (student.update({"city": "New York"}))  # adds a new key-value pair to the dictionary 'student'
